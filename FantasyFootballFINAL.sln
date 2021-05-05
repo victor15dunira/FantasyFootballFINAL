@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyFootballFINAL", "FantasyFootballFINAL\FantasyFootballFINAL.csproj", "{6BB2C71E-1B8F-4AF6-96A7-74EAA5C566A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyFootballWebApp", "FantasyFootballWebApp\FantasyFootballWebApp.csproj", "{02F879A6-842C-4307-9145-1B7318BB0BC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BB2C71E-1B8F-4AF6-96A7-74EAA5C566A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB2C71E-1B8F-4AF6-96A7-74EAA5C566A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB2C71E-1B8F-4AF6-96A7-74EAA5C566A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB2C71E-1B8F-4AF6-96A7-74EAA5C566A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02F879A6-842C-4307-9145-1B7318BB0BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F879A6-842C-4307-9145-1B7318BB0BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F879A6-842C-4307-9145-1B7318BB0BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F879A6-842C-4307-9145-1B7318BB0BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49BDFDB5-606D-43E0-B878-3B34FE07F0EF}
+	EndGlobalSection
+EndGlobal
