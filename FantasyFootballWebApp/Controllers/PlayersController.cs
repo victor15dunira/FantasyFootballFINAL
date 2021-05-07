@@ -1,37 +1,75 @@
-﻿using FantasyFootballWebApp.Models;
+﻿
+using FantasyFootballWebApp.Data;
+using FantasyFootballWebLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace FantasyFootballWebApp.Controllers
 {
+    [Route("[Controller]")]
     public class PlayersController : Controller
+
     {
-        private readonly ILogger<PlayersController> _logger;
 
-        public PlayersController(ILogger<PlayersController> logger)
+        private readonly ApplicationDbContext dbContext;
+        public PlayersController(ApplicationDbContext applicationDbContext)
         {
-            _logger = logger;
+            dbContext = applicationDbContext;
         }
-
+        //READ
+        [Route("")]
         public IActionResult Index()
         {
-            return View();
+            var allplayers = dbContext.Players.ToList();
+            return View(allplayers);
+        }
+        [Route("details/{id:int}")] //how to uniquely identify individual players 
+        public IActionResult Details(int id)
+        {
+            var playerById = dbContext.Players.FirstOrDefault(t => t.ID == id);
+            return View(playerById);
         }
 
-        public IActionResult Privacy()
+
+        //UPDATE
+        [Route("update/{id:int}")]
+        public IActionResult Update(int id)
         {
-            return View();
+            var playerById = dbContext.Players.FirstOrDefault(t => t.ID == id);
+            return View(playerById);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+
+        [HttpPost] //Sending data, create new data in a particular place.
+        [Route("update/{id:int}")]
+        public IActionResult Update(Player player, int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+            var playerToUpdate = dbContext.Players.FirstOrDefault(t => t.ID == id);
+            playerToUpdate.FirstName = player.FirstName;
+            playerToUpdate.LastName = player.LastName;
+            playerToUpdate.Height = player.Height;
+            playerToUpdate.PictureURL = player.PictureURL;
+            playerToUpdate.Position = player.Position;
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+
+
         }
+
+        //DELETE
+        [Route("delete/{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            var playerToDelete = dbContext.Players.FirstOrDefault(t => t.ID == id);
+            dbContext.Players.Remove(playerToDelete);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
+
+
 }
+
+

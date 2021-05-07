@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FantasyFootballWebLibrary.Models.Team>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PictureURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numberofplayers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamColour)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.PictureURL" style="height:128px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numberofplayers)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeamColour)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Update", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
+                    @Html.ActionLink("View Players", "ViewPlayers", new { id = item.ID })|       @*All buttons to direct to webpages*@
+                    @Html.ActionLink("Add Player", "CreatePlayer", new { teamID = item.ID })|
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

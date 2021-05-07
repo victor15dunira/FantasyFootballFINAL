@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace FantasyFootballWebApp.Controllers
 {
-    public class PlayersController : Controller
+    public class HomeController : Controller
     {
-        private readonly ILogger<PlayersController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
-        public PlayersController(ILogger<PlayersController> logger)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }

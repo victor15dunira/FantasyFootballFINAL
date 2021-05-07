@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FantasyFootballWebLibrary.Data
+namespace FantasyFootballWebApp.Data
 {
     public class ApplicationDbContext : DbContext
     {

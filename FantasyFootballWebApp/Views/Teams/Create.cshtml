@@ -1,0 +1,57 @@
+﻿@model FantasyFootballWebLibrary.Models.Binding.AddTeamBindingModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Create New Team</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group ">
+                <label asp-for="Name" class=" " control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class=" text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TeamColour" class="control-label"></label>
+                <input asp-for="TeamColour" class="form-control" />
+                <span asp-validation-for="TeamColour" class=" text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Numberofplayers" class="control-label"></label>
+                <select asp-for="Numberofplayers" class="form-control">
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="4">Four</option>
+                    <option value="5">Five</option>
+                    <option value="6">Six</option>
+                    <option value="7">Seven</option>
+                    <option value="8">Eight</option>
+                    <option value="9">Nine</option>
+                    <option value="10">Ten</option>
+                    <option value="10">Eleven</option>
+                </select>
+                <span asp-validation-for="Numberofplayers" class=" text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div class="form-group">
+    <a asp-action="Index"> Back to List </a>
+</div>
+
+
+@section Scripts {
+       @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+
+}
