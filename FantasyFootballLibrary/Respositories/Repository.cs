@@ -1,32 +1,35 @@
-﻿using FantasyFootballLibrary.Interfaces;
+﻿using FantasyFootballLibrary.Data;
+using FantasyFootballLibrary.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace FantasyFootballLibrary.Respositories
 {
     public class Repository<T> : IRepository<T> where T : class // inherits from IRepository, where the T inherits from the class
-    //Click Ctrl + . on the phrase "IRepository<T> in order to implement interferences 
+                                                                //Click Ctrl + . on the phrase "IRepository<T> in order to implement interferences 
     {
         protected ApplicationDbContext RepositoryContext { get; set; }
 
         public Repository(ApplicationDbContext repositoryContext) //Dependency injection
 
-            {
-            
-            RepositoryContext = RepositoryContext;
-            
-            }
+        {
+
+            RepositoryContext = repositoryContext;
+
+        }
 
 
         public T Create(T entity)
         {
-        return RepositoryContext.Set<T>().Add(entity).Entity;
+            return RepositoryContext.Set<T>().Add(entity).Entity;
         }
 
         public void Delete(T entity)
         {
-           RepositoryContext.Set<T>().Remove(entity);
+            RepositoryContext.Set<T>().Remove(entity);
         }
 
         public IEnumerable<T> FindAll()

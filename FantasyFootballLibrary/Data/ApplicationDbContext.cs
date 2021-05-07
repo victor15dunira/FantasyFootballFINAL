@@ -1,12 +1,7 @@
 ﻿using FantasyFootballWebLibrary.Models;
-using FantasyFootballWebLibrary.Models.Binding;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace FantasyFootballWebApp.Data
+namespace FantasyFootballLibrary.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,4 +1,4 @@
-using FantasyFootballWebApp.Data;
+using FantasyFootballLibrary.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +23,7 @@ namespace FantasyFootballWebApp
             services.AddRouting(r => r.LowercaseUrls = true);
             var myConnectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseMySql(myConnectionString, ServerVersion.AutoDetect(myConnectionString)));
+            options.UseMySql(myConnectionString, ServerVersion.AutoDetect(myConnectionString), b => b.MigrationsAssembly("FantasyFootballWebApp")));
             services.AddControllersWithViews();
         }
 
