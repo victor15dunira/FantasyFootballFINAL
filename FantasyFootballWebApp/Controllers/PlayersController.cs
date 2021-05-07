@@ -1,5 +1,4 @@
-﻿
-using FantasyFootballWebApp.Data;
+﻿using FantasyFootballWebApp.Data;
 using FantasyFootballWebLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;

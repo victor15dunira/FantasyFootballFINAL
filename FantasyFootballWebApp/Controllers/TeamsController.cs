@@ -103,7 +103,7 @@ namespace FantasyFootballWebApp.Controllers
                 Position = bindingModel.Position,
                 Team = dbContext.Teams.FirstOrDefault(c => c.ID == teamID),
                 PictureURL = "https://freepngimg.com/download/football/66114-soccer-photography-football-royalty-free-player-stock-playing.png",
-                CreatedAt = DateTime.Now
+                CreatedAt = DateTime.Now 
             };
             dbContext.Players.Add(playerToCreate);
             dbContext.SaveChanges();

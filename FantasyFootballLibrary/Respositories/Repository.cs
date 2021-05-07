@@ -31,17 +31,17 @@ namespace FantasyFootballLibrary.Respositories
 
         public IEnumerable<T> FindAll()
         {
-           
+            return RepositoryContext.Set<T>().AsNoTracking();
         }
 
         public IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            
+            return RepositoryContext.Set<T>().Where(expression).AsNoTracking();
         }
 
         public T Update(T entity)
         {
-            
+            return RepositoryContext.Set<T>().Update(entity).Entity;
         }
     }
 }
