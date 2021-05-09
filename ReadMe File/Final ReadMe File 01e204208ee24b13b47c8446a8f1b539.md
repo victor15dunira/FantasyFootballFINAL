@@ -29,6 +29,7 @@ Initially from a design viewpoint there were two ideas which came to mind, the f
 - Name
 - Logo/Badge
 - Number of players
+
 - Create a player that stores:
 - First Name
 - Last Name
@@ -36,6 +37,7 @@ Initially from a design viewpoint there were two ideas which came to mind, the f
 - Creation date
 - Height
 - Image of player
+
 - View and Update the players on an individual team
 - View and Update the team
 - Delete a player from an individual team
