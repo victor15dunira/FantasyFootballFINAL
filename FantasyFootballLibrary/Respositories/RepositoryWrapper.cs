@@ -19,12 +19,40 @@ namespace FantasyFootballLibrary.Respositories
 
         }
 
-         ITeamRepository _teams;
-        IPlayerRepository _players;
+        ITeamRepository _teams;  //private fields 
+        IPlayerRepository _players; //private fields which are called bt the classes below
 
-         void Save()
+
+        public ITeamRepository Teams
         {
-            throw new NotImplementedException();
+            get                          //If team is empty create a new team repository and then return the team back
+            {
+                if (_teams == null)
+                {
+                    _teams = new TeamRepository(_repoContext);
+                }
+                return _teams;
+            }
+
+        }
+
+
+        public IPlayerRepository Players
+        {
+            get
+            {
+                if (_players == null)
+                {
+                    _players = new PlayerRepository(_repoContext);
+                }
+                return _players;
+            }
+
+        }
+
+        void IRepositoryWrapper.Save()
+        {
+            _repoContext.SaveChanges();
         }
     }
 }
