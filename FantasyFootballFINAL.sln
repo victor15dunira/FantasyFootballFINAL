@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyFootballAPI", "Fanta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyFootballLibrary", "FantasyFootballLibrary\FantasyFootballLibrary.csproj", "{56687179-8598-4E9E-BF95-FAD3A5AF8811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyFootballWebTests", "FantasyFootballWebTests\FantasyFootballWebTests.csproj", "{E1E696A2-4DF3-41AA-8F6A-3FE2BD605823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FantasyFootballWebTests", "FantasyFootballWebTests\FantasyFootballWebTests.csproj", "{E1E696A2-4DF3-41AA-8F6A-3FE2BD605823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamsandPlayers.Tests", "TeamsandPlayers.Tests\TeamsandPlayers.Tests.csproj", "{E89AC7F4-EC95-4AEA-99A7-A579385E604E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E1E696A2-4DF3-41AA-8F6A-3FE2BD605823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E696A2-4DF3-41AA-8F6A-3FE2BD605823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1E696A2-4DF3-41AA-8F6A-3FE2BD605823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89AC7F4-EC95-4AEA-99A7-A579385E604E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89AC7F4-EC95-4AEA-99A7-A579385E604E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89AC7F4-EC95-4AEA-99A7-A579385E604E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89AC7F4-EC95-4AEA-99A7-A579385E604E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
